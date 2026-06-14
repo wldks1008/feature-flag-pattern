@@ -1,4 +1,4 @@
-# Feature Flag Playground
+# Feature Flag Pattern
 
 Kotlin + Spring Boot로 feature flag 패턴을 실습하기 위한 멀티 모듈 프로젝트입니다.
 
