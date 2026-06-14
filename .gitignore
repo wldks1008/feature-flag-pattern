@@ -1,0 +1,106 @@
+# Gradle / Kotlin
+.gradle/
+.kotlin/
+build/
+out/
+target/
+**/build/
+**/out/
+**/target/
+**/.gradle/
+**/.kotlin/
+*.class
+
+# Gradle wrapper keeps these tracked; ignore downloaded distributions only.
+gradle/wrapper/dists/
+gradle/wrapper/.gradle/
+
+# Maven
+.mvn/timing.properties
+.mvn/wrapper/maven-wrapper.jar.sha256
+
+# Spring Boot / local runtime
+logs/
+**/logs/
+*.log
+*.pid
+*.pid.lock
+*.seed
+*.stackdump
+hs_err_pid*
+replay_pid*
+.attach_pid*
+application-local.yml
+application-local.yaml
+application-local.properties
+application-*.local.yml
+application-*.local.yaml
+application-*.local.properties
+
+# Local environment / secrets
+.env
+.env.*
+!.env.example
+!.env.sample
+*.pem
+*.key
+*.keystore
+*.jks
+
+# Test and local database artifacts
+*.h2.db
+*.mv.db
+*.trace.db
+*.sqlite
+*.sqlite3
+test-results/
+reports/
+coverage/
+.nyc_output/
+
+# IntelliJ IDEA / Android Studio
+.idea/*
+!.idea/.gitignore
+*.iml
+*.iws
+*.ipr
+
+# Eclipse / STS
+.classpath
+.project
+.settings/
+.metadata/
+bin/
+.factorypath
+
+# VS Code
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
+
+# macOS / Windows / Linux
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon?
+._*
+Thumbs.db
+Desktop.ini
+ehthumbs.db
+$RECYCLE.BIN/
+*~
+.directory
+.Trash-*
+
+# Archives and temporary files
+*.zip
+*.tar
+*.tar.gz
+*.tgz
+*.tmp
+*.temp
+*.swp
+*.swo
+
+# Superpowers / agent-generated planning docs
+docs/superpowers/

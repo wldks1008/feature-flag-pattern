@@ -1,0 +1,15 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: alarm-service
+  data:
+    redis:
+      host: localhost
+      port: 6379
+
+feature-flag:
+  base-url: http://localhost:8081
+  cache-ttl: 5s
+  cache-key-prefix: feature-flag
