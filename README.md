@@ -35,37 +35,11 @@ feature-flag-playground
 
 ## 시스템 흐름
 
-<img width="1444" height="1416" alt="image" src="https://github.com/user-attachments/assets/b3693de3-9fab-4c9a-9159-3379be232313" />
+<img width="706" height="698" alt="image" src="https://github.com/user-attachments/assets/b353cce0-4c16-4e96-a59b-e4d06c38bc14" />
 
 ## 런타임 flag 조회 흐름
 
-`alarm-service`는 알림 요청을 처리할 때마다 `FeatureFlagClient`를 호출합니다. 단, 매번 바로 `feature-flag-server`를 호출하지 않고 Redis를 먼저 봅니다.
-
-```mermaid
-flowchart TD
-    START[Alarm request]
-    CHECK[Check Redis cache]
-    HIT{Cache hit}
-    USE_CACHE[Use cached flag]
-    CALL_REMOTE[Call Feature Flag Server]
-    SAVE_CACHE[Save to Redis with TTL]
-    USE_REMOTE[Use remote flag]
-    USE_DEFAULT[Use default value]
-    RESPONSE[Return alarm result]
-
-    START --> CHECK
-    CHECK --> HIT
-    HIT -->|Yes| USE_CACHE
-    HIT -->|No| CALL_REMOTE
-    CALL_REMOTE -->|Success| SAVE_CACHE
-    SAVE_CACHE --> USE_REMOTE
-    CALL_REMOTE -->|Fail or not found| USE_DEFAULT
-    USE_CACHE --> RESPONSE
-    USE_REMOTE --> RESPONSE
-    USE_DEFAULT --> RESPONSE
-```
-
-flag 서버 장애, Redis 장애, flag 미존재 같은 상황에서는 요청자가 넘긴 기본값을 사용하고 `source=DEFAULT`로 응답합니다.
+<img width="726" height="734" alt="image" src="https://github.com/user-attachments/assets/ede0be3f-3f1d-4bde-b2c9-26847a9b3872" />
 
 ## 제공되는 flag
 
