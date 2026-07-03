@@ -35,25 +35,7 @@ feature-flag-playground
 
 ## 시스템 흐름
 
-```mermaid
-flowchart TD
-    ADMIN[Admin UI]
-    FLAG[Feature Flag Server]
-    CLIENT[Client]
-    ALARM[Alarm Service]
-    PROCESSOR[Alarm Processor]
-    CACHE[Redis Cache]
-
-    ADMIN -->|Update flag| FLAG
-    CLIENT -->|POST alarms| ALARM
-    ALARM --> PROCESSOR
-    PROCESSOR -->|Read flag| CACHE
-    CACHE -->|Cache miss| FLAG
-    FLAG -->|Flag value| CACHE
-    CACHE -->|Flag value| PROCESSOR
-    PROCESSOR -->|Send or skip| ALARM
-    ALARM -->|Result| CLIENT
-```
+<img width="1444" height="1416" alt="image" src="https://github.com/user-attachments/assets/b3693de3-9fab-4c9a-9159-3379be232313" />
 
 ## 런타임 flag 조회 흐름
 
